@@ -67,6 +67,5 @@ query = (f"\n\nHuman:{question}\n\nAssistant:")
 qa_chain = RetrievalQA.from_chain_type(llm,retriever=vectorstore.as_retriever())
 response = qa_chain({"query": query})
 
-from IPython.display import Markdown, display
-
-display(Markdown(response['result']))
+from pprint import pprint
+pprint(response['result'])
